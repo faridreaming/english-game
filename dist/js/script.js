@@ -3,32 +3,53 @@ const category = new URLSearchParams(window.location.search).get("category") || 
 categorySpan.textContent = category.charAt(0).toUpperCase() + category.slice(1);
 
 const navLinks = document.querySelectorAll("nav .nav-link");
-const levelContainer = document.getElementById("level-container");
 
-const generateLevel = (totalLevel, category) => {
-  let level = "";
-  for (let i = 1; i <= totalLevel; i++) {
-    level += `
-      <div class="flex justify-center flex-col items-center">
-        <a href="game.html?category=${category}&level=${i}" class="bg-secondary hover:bg-opacity-80 flex items-center justify-center h-16 aspect-square rounded-full text-3xl font-bold text-white ring-[6px] ring-slate-300 transition duration-200 ease-in-out"><span class="drop-shadow">${i}</span></a>
-        ${i === totalLevel ? "" : `<div class="w-1 h-20 bg-slate-300"></div>`}
-      </div>
-    `;
-  }
-  return level;
-};
+const chapterContainer = document.getElementById("chapter-container");
 
-// document.addEventListener("DOMContentLoaded", () => {
+const categoryList = [
+  {
+    title: "Grammar",
+    chapters: ["Adjective Game", "Verb Game", "Adverb Game", "Noun Game"],
+  },
+];
+
+let icon = "";
+
 switch (category) {
   case "grammar":
     navLinks[0].classList.add("active");
-    levelContainer.innerHTML = generateLevel(5, "grammar");
+    icon = navLinks[0].querySelector("div svg");
+    primaryColor = "sky-500";
+    chapterContainer.innerHTML = generateChapter(categoryList[0]);
     break;
   case "vocabulary":
     navLinks[1].classList.add("active");
+    icon = navLinks[1].querySelector("div svg");
+    primaryColor = "yellow-500";
     break;
   case "reading":
     navLinks[2].classList.add("active");
+    icon = navLinks[2].querySelector("div svg");
+    primaryColor = "emerald-500";
     break;
 }
-// });
+
+const topBar = document.getElementById("top-bar");
+topBar.classList.add(`bg-${primaryColor}`);
+
+function generateChapter(category) {
+  const chapters = category.chapters;
+  let chapterList = "";
+  chapters.forEach((chapter, number) => {
+    chapterList += `
+      <div class="px-8 w-full">
+        <div class="bg-${primaryColor} bg-opacity-10 border border-${primaryColor} px-4 py-16 rounded-2xl">
+          <div class="flex justify-center">
+            <h3 class="text-center"><span class="font-bold">Chapter ${number + 1}:</span> ${chapter}</h3>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  return chapterList;
+}
