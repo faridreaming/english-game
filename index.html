@@ -9,21 +9,18 @@
   <body>
     <!-- Header Start -->
     <header
-      class="fixed bottom-0 left-0 right-0 z-50 flex justify-center border-t-2 border-gray/25 bg-white p-1 sm:right-auto sm:h-full sm:border-r-2 sm:border-t-0 sm:p-3 lg:p-4"
+      class="fixed bottom-0 left-0 right-0 z-50 flex flex-col justify-between border-t-2 border-gray/25 bg-white p-1 sm:right-auto sm:h-full sm:border-r-2 sm:border-t-0 sm:p-3 lg:p-4"
     >
       <nav class="w-full">
-        <ul class="flex justify-evenly sm:flex-col sm:gap-8 [&>li]:flex [&>li]:items-center">
-          <li>
-            <a
-              href="#"
-              class="relative mx-auto my-4 flex w-fit flex-nowrap justify-center px-1 font-inter font-bold italic text-white transition duration-300 ease-in-out after:absolute after:-inset-1 after:-z-[1] after:-skew-x-12 after:skew-y-1 after:bg-primary after:transition hover:drop-shadow-lg lg:m-4 lg:px-2 lg:text-lg"
-              >E<span class="hidden lg:inline-block">nglish&nbsp;</span>G<span class="hidden lg:inline-block"
-                >ame</span
-              ></a
-            >
+        <ul class="flex items-center justify-evenly sm:flex-col sm:gap-8 lg:items-start">
+          <li class="hidden border-b-2 border-gray/25 sm:block">
+            <a href="#" class="mb-8 mt-6 flex items-center gap-2 px-2">
+              <img src="dist/img/uk-flag.svg" alt="UK Flag" class="h-6 rounded" />
+              <span class="hidden text-lg font-bold lg:inline">English Game</span>
+            </a>
           </li>
-          <li>
-            <a href="?category=grammar" class="nav-link">
+          <li class="lg:w-full">
+            <a href="?category=grammar" class="nav-link [&>div]:bg-sky-500">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -33,15 +30,15 @@
                   fill="#000000"
                 >
                   <path
-                    d="m424-312 282-282-56-56-226 226-114-114-56 56 170 170ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
+                    d="M564-80 394-250l56-56 114 114 226-226 56 56L564-80ZM120-320l194-520h94l194 520h-92l-46-132H254l-46 132h-88Zm162-208h156l-76-216h-4l-76 216Z"
                   />
                 </svg>
               </div>
               <span class="hidden lg:inline">Grammar</span></a
             >
           </li>
-          <li>
-            <a href="?category=vocabulary" class="nav-link">
+          <li class="lg:w-full">
+            <a href="?category=vocabulary" class="nav-link [&>div]:bg-yellow-500">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -58,8 +55,8 @@
               <span class="hidden lg:inline">Vocabulary</span></a
             >
           </li>
-          <li>
-            <a href="?category=reading" class="nav-link">
+          <li class="lg:w-full">
+            <a href="?category=reading" class="nav-link [&>div]:bg-emerald-500">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -78,21 +75,32 @@
           </li>
         </ul>
       </nav>
+      <span class="hidden text-sm lg:mx-auto lg:inline lg:max-w-40"
+        >Made with <span class="font-bold text-pink-500">&hearts;</span> by
+        <span class="font-bold text-sky-500">@farid</span></span
+      >
     </header>
     <!-- Header End -->
 
     <!-- Top Bar Start -->
     <section>
       <div
-        class="fixed left-0 right-0 top-0 z-50 m-4 rounded-2xl bg-primary p-4 text-white sm:left-[4.675rem] lg:left-[12.6rem]"
+        class="fixed left-0 right-0 top-0 z-50 m-4 rounded-2xl p-4 text-white sm:left-[4.675rem] lg:left-[12.6rem]"
+        id="top-bar"
       >
         <h1 class="mb-4 text-xl font-bold"><span id="category-span" class="uppercase"></span></h1>
         <h2 class="mb-1 font-semibold">Progress:</h2>
         <div class="h-4 w-full rounded-full bg-white"></div>
       </div>
-      <div class="container mx-auto mb-24 mt-48 sm:pl-[4.675rem] lg:pl-[12.6rem]" id="level-container"></div>
     </section>
     <!-- Top Bar End -->
+
+    <!-- Chapter Start -->
+    <div
+      class="container mx-auto mb-24 mt-48 flex flex-col items-center gap-8 sm:pl-[4.675rem] lg:pl-[12.6rem]"
+      id="chapter-container"
+    ></div>
+    <!-- Chapter End -->
     <script src="dist/js/script.js"></script>
   </body>
 </html>
