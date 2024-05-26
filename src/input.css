@@ -9,5 +9,9 @@ body {
 }
 
 .nav-link {
-  @apply flex rounded-xl border-2 border-gray/35 p-2 font-semibold hover:bg-gray/10;
+  @apply flex rounded-xl border-2 border-transparent p-2 font-semibold hover:bg-gray/10;
+}
+
+.nav-link.active {
+  @apply border-gray/50 bg-gray/10;
 }

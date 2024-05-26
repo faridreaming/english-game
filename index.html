@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grammar Game</title>
+    <title>Grammar Games</title>
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="icon" type="image/x-icon" href="dist/img/favicon.svg" />
   </head>
@@ -13,17 +13,30 @@
       <div class="container mx-auto">
         <ul class="flex justify-center lg:justify-normal">
           <li>
-            <a href="#" class="flex w-fit items-center gap-2 whitespace-nowrap">
+            <a href="#" class="flex w-fit items-center gap-2 whitespace-nowrap p-2">
               <div class="w-8 rounded-lg bg-emerald-500 p-1">
                 <img src="dist/img/grammar.svg" alt="Logo" />
               </div>
-              <span class="font-semibold">Grammar Game</span></a
+              <span class="font-semibold">Grammar Games</span></a
             >
           </li>
         </ul>
       </div>
     </nav>
     <!-- Navbar Top End -->
+
+    <!-- Dashboard Start -->
+    <div class="container mx-auto mt-20 px-4">
+      <div class="rounded-lg p-4 text-white" id="dashboard">
+        <h2 class="text-xl font-semibold"><span id="category-title-span"></span></h2>
+        <p class="mb-4 text-sm"><span id="description-span"></span></p>
+        <div class="flex">
+          <span class="w-full font-semibold">EXP: <span id="score-span"></span></span>
+          <span class="w-full font-semibold">Total EXP: <span id="total-score-span"></span></span>
+        </div>
+      </div>
+    </div>
+    <!-- Dashboard End -->
 
     <!-- Level Container Start -->
     <div class="container mx-auto" id="level-container"></div>
@@ -36,7 +49,7 @@
           <li class="md:w-full">
             <a href="?category=0" class="nav-link flex w-full items-center gap-2 whitespace-nowrap">
               <div class="w-7 rounded-lg bg-sky-500 p-1"><img src="dist/img/swap.svg" /></div>
-              <span class="hidden md:inline">Match & Rearrange</span>
+              <span class="hidden md:inline">Word Pairs</span>
             </a>
           </li>
           <li class="md:w-full">
