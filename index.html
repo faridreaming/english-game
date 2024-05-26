@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grammar Game</title>
+    <link rel="stylesheet" href="dist/output.css" />
+    <link rel="icon" type="image/x-icon" href="dist/img/favicon.svg" />
+  </head>
+  <body>
+    <!-- Navbar Top Start -->
+    <nav class="fixed left-0 right-0 top-0 w-full border-b-2 border-gray/35 bg-white p-2">
+      <div class="container mx-auto">
+        <ul class="flex justify-center lg:justify-normal">
+          <li>
+            <a href="#" class="flex w-fit items-center gap-2 whitespace-nowrap">
+              <div class="w-8 rounded-lg bg-emerald-500 p-1">
+                <img src="dist/img/grammar.svg" alt="Logo" />
+              </div>
+              <span class="font-semibold">Grammar Game</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar Top End -->
+
+    <!-- Level Container Start -->
+    <div class="container mx-auto" id="level-container"></div>
+    <!-- Level Container End -->
+
+    <!-- Navbar Bottom Start -->
+    <nav class="fixed bottom-0 left-0 right-0 w-full border-t-2 border-gray/35 bg-white p-2">
+      <div class="container mx-auto">
+        <ul class="flex justify-around md:justify-normal md:gap-4">
+          <li class="md:w-full">
+            <a href="?category=0" class="nav-link flex w-full items-center gap-2 whitespace-nowrap">
+              <div class="w-7 rounded-lg bg-sky-500 p-1"><img src="dist/img/swap.svg" /></div>
+              <span class="hidden md:inline">Match & Rearrange</span>
+            </a>
+          </li>
+          <li class="md:w-full">
+            <a href="?category=1" class="nav-link flex w-full items-center gap-2 whitespace-nowrap">
+              <div class="w-7 rounded-lg bg-green-500 p-1"><img src="dist/img/shuffle.svg" /></div>
+              <span class="hidden md:inline">Sentence Shuffle</span>
+            </a>
+          </li>
+          <li class="md:w-full">
+            <a href="?category=2" class="nav-link flex w-full items-center gap-2 whitespace-nowrap">
+              <div class="w-7 rounded-lg bg-amber-500 p-1"><img src="dist/img/blank.svg" /></div>
+              <span class="hidden md:inline">Blank Fit</span>
+            </a>
+          </li>
+          <li class="md:w-full">
+            <a href="?category=3" class="nav-link flex w-full items-center gap-2 whitespace-nowrap">
+              <div class="w-7 rounded-lg bg-red-500 p-1"><img src="dist/img/error.svg" /></div>
+              <span class="hidden md:inline">Error Spot</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar Bottom End -->
+    <script src="dist/script.js"></script>
+  </body>
+</html>

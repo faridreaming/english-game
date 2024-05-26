@@ -7,3 +7,7 @@ body {
   font-family: "Nunito", "Inter", sans-serif;
   @apply text-dark;
 }
+
+.nav-link {
+  @apply flex rounded-xl border-2 border-gray/35 p-2 font-semibold hover:bg-gray/10;
+}
