@@ -53,8 +53,8 @@ function generateChapter(category) {
   chapters.forEach((chapter, number) => {
     chapterList += `
       <div class="px-8 w-full">
-        <a href="game.html?category=${category.title}&chapter=${chapter}" class="flex hover:bg-gray/10 transition duration-200 ease-in-out border-2 border-gray/35 border-b-4 px-4 py-12 overflow-hidden rounded-2xl relative">
-          <div class="absolute right-0 scale-[3] translate-y-5 -translate-x-6 [&>svg]:fill-white ${bgColor} p-1 rounded -rotate-3">
+        <a href="game.html?category=${category.title.toLowerCase()}&chapter=${number}&level=1" class="flex hover:bg-gray/10 transition duration-200 ease-in-out border-2 border-gray/35 border-b-4 px-4 py-12 overflow-hidden rounded-2xl relative">
+          <div class="absolute right-0 -z-10 scale-[3] translate-y-5 -translate-x-6 [&>svg]:fill-white ${bgColor} opacity-50 p-1 rounded -rotate-3">
             ${icon.outerHTML}
           </div>
           <div class="flex flex-col items-start">
