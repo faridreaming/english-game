@@ -5,7 +5,7 @@
 
 body {
   font-family: "Nunito", "Inter", sans-serif;
-  @apply text-midnight;
+  @apply text-midnight select-auto;
 }
 
 .nav-link {
@@ -35,7 +35,7 @@ body {
 
 .pair-a-correct,
 .pair-b-correct {
-  @apply border-emerald-500 bg-emerald-50;
+  @apply pointer-events-none border-emerald-500 bg-emerald-50;
 }
 
 #pair-a div:not(.pair-a-selected):not(.pair-a-correct):hover,

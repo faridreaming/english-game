@@ -38,7 +38,7 @@ const categoryIndex =
 const selectedCategory = categories[categoryIndex];
 
 // Update page elements with the selected category
-document.title = `Grammar Games | ${selectedCategory.title}`;
+document.title = `English Games | ${selectedCategory.title}`;
 document.getElementById("category-title-span").textContent =
   selectedCategory.title;
 document.getElementById("description-span").textContent =

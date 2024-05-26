@@ -28,6 +28,21 @@ document.getElementById("confirm-yes").addEventListener("click", () => {
   window.location.href = "index.html?category=0";
 });
 
+function showGameOverPopup() {
+  const popup = document.getElementById("game-over-popup");
+  popup.classList.remove("hidden");
+  setTimeout(() => popup.classList.add("visible"), 0);
+  console.log("game over");
+}
+
+document.getElementById("game-over-retry").addEventListener("click", () => {
+  window.location.reload();
+});
+
+document.getElementById("game-over-quit").addEventListener("click", () => {
+  window.location.href = "index.html?category=0";
+});
+
 // Game Mechanism
 // prettier-ignore
 let words = [
@@ -115,22 +130,24 @@ const checkMatch = () => {
         }
       } else {
         pairA.forEach((div) => {
-          if (div.classList.contains("pair-a-selected"))
+          if (div.classList.contains("pair-a-selected")) {
             div.classList.add("pair-incorrect");
+            div.classList.remove("pair-a-selected");
+          }
         });
         pairB.forEach((div) => {
-          if (div.classList.contains("pair-b-selected"))
+          if (div.classList.contains("pair-b-selected")) {
             div.classList.add("pair-incorrect");
+            div.classList.remove("pair-b-selected");
+          }
         });
       }
       selectedPair = [];
       setTimeout(() => {
         pairA.forEach((div) => {
-          div.classList.remove("pair-a-selected");
           div.classList.remove("pair-incorrect");
         });
         pairB.forEach((div) => {
-          div.classList.remove("pair-b-selected");
           div.classList.remove("pair-incorrect");
         });
       }, 300);
@@ -154,19 +171,4 @@ pairB.forEach((div) => {
     selectedPair[1] = pairBShuffled[Array.from(pairB).indexOf(div)];
     checkMatch();
   });
-});
-
-function showGameOverPopup() {
-  const popup = document.getElementById("game-over-popup");
-  popup.classList.remove("hidden");
-  setTimeout(() => popup.classList.add("visible"), 0);
-  console.log("game over");
-}
-
-document.getElementById("game-over-retry").addEventListener("click", () => {
-  window.location.reload();
-});
-
-document.getElementById("game-over-quit").addEventListener("click", () => {
-  window.location.href = "index.html?category=0";
 });
