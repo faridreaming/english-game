@@ -1,4 +1,6 @@
 const level = Number(new URLSearchParams(window.location.search).get("level"));
+const expReward = level === 1 ? 15 : level === 2 ? 30 : 50;
+document.getElementById("exp-span").textContent = expReward;
 
 document.title = `Word Pairs | Level ${level}`;
 document.getElementById("logo-span").textContent = `Word Pairs Level ${level}`;
@@ -85,7 +87,7 @@ pairBSpans.forEach((span, index) => {
 const pairA = document.querySelectorAll("#pair-a div");
 const pairB = document.querySelectorAll("#pair-b div");
 
-let correctTotal = 6;
+let correctTotal = 0;
 let selectedPair = [];
 const checkMatch = () => {
   if (selectedPair.length === 2) {
@@ -108,6 +110,8 @@ const checkMatch = () => {
         console.log(correctTotal);
         if (correctTotal === 7) {
           showGameOverPopup();
+          const totalEXP = localStorage.getItem("totalEXP") || 0;
+          localStorage.setItem("totalEXP", Number(totalEXP) + expReward);
         }
       } else {
         pairA.forEach((div) => {

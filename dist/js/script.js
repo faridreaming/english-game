@@ -55,3 +55,4 @@ document.querySelectorAll(".level-button").forEach((button, level) => {
 
 // Retrieve and handle total EXP
 const totalEXP = localStorage.getItem("totalEXP") || 0;
+document.getElementById("total-exp-span").textContent = totalEXP;
