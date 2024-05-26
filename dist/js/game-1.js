@@ -2,9 +2,9 @@ const level = Number(new URLSearchParams(window.location.search).get("level"));
 const expReward = level === 1 ? 15 : level === 2 ? 30 : 50;
 document.getElementById("exp-span").textContent = expReward;
 
-document.title = `Translation Pairs | Level ${level}`;
+document.title = `Synonym Pairs | Level ${level}`;
 document.getElementById("logo-span").textContent =
-  `Translation Pairs Level ${level}`;
+  `Synonym Pairs Level ${level}`;
 document
   .getElementById("back-button")
   .addEventListener("click", showConfirmPopup);
@@ -26,7 +26,7 @@ function hideConfirmPopup() {
 }
 
 document.getElementById("confirm-yes").addEventListener("click", () => {
-  window.location.href = "index.html?category=0";
+  window.location.href = "index.html?category=1";
 });
 
 function showGameOverPopup() {
@@ -41,23 +41,23 @@ document.getElementById("game-over-retry").addEventListener("click", () => {
 });
 
 document.getElementById("game-over-quit").addEventListener("click", () => {
-  window.location.href = "index.html?category=0";
+  window.location.href = "index.html?category=1";
 });
 
 // Game Mechanism
 // prettier-ignore
 let words = [
   {
-    a: ["hello", "goodbye", "please", "thank you", "sorry", "yes", "no", "excuse me", "help", "sorry", "happy", "sad", "angry", "love", "friend", "family", "teacher", "student", "school", "work", "play", "eat", "drink", "sleep", "wake up", "morning", "afternoon", "evening", "night", "today", "tomorrow", "yesterday", "week", "month", "year", "time", "money", "home", "food", "water", "book", "computer", "phone", "internet", "music", "movie", "game", "sport"],
-    b: ["halo", "selamat tinggal", "tolong", "terima kasih", "maaf", "ya", "tidak", "permisi", "bantuan", "maaf", "bahagia", "sedih", "marah", "cinta", "teman", "keluarga", "guru", "siswa", "sekolah", "kerja", "bermain", "makan", "minum", "tidur", "bangun", "pagi", "siang", "sore", "malam", "hari ini", "besok", "kemarin", "minggu", "bulan", "tahun", "waktu", "uang", "rumah", "makanan", "air", "buku", "komputer", "telepon", "internet", "musik", "film", "permainan", "olahraga"]     
+    a: ["big", "happy", "fast", "hot", "small", "sad", "tired", "old", "new", "pretty", "angry", "funny", "quiet", "loud", "hard", "soft", "strong", "weak", "young", "old", "smart", "easy", "difficult", "beautiful", "ugly"],
+    b: ["large", "glad", "quick", "warm", "little", "unhappy", "sleepy", "elderly", "modern", "attractive", "furious", "amusing", "silent", "noisy", "difficult", "gentle", "powerful", "fragile", "youthful", "aged", "intelligent", "simple", "challenging", "attractive", "unattractive"]    
   },
   {
-    a: ["weather", "climate", "environment", "global warming", "pollution", "recycle", "sustainability", "renewable energy", "technology", "innovation", "education", "knowledge", "communication", "conversation", "discussion", "debate", "argument", "solution", "challenge", "opportunity", "experience", "adventure", "journey", "discovery", "achievement", "success", "failure", "progress", "development", "improvement", "change", "transformation", "growth", "decision", "responsibility", "accountability", "leadership", "organization", "management", "efficiency", "productivity", "creativity", "imagination", "strategy", "tactics", "goal", "objective", "ambition", "motivation"],
-    b: ["cuaca", "iklim", "lingkungan", "pemanasan global", "polusi", "daur ulang", "keberlanjutan", "energi terbarukan", "teknologi", "inovasi", "pendidikan", "pengetahuan", "komunikasi", "percakapan", "diskusi", "debat", "argumen", "solusi", "tantangan", "kesempatan", "pengalaman", "petualangan", "perjalanan", "penemuan", "prestasi", "kesuksesan", "kegagalan", "kemajuan", "pengembangan", "perbaikan", "perubahan", "transformasi", "pertumbuhan", "keputusan", "tanggung jawab", "akuntabilitas", "kepemimpinan", "organisasi", "manajemen", "efisiensi", "produktivitas", "kreativitas", "imaginasi", "strategi", "taktik", "tujuan", "obyektif", "ambisi", "motivasi"]    
+    a: ["brave", "clever", "confident", "generous", "persistent", "precise", "reckless", "sensible", "significant", "sincere", "sophisticated", "stubborn", "tempting", "transparent", "vague", "vivid", "wise", "arrogant", "capable", "curious", "deceitful", "determined", "diligent", "discreet", "eager"],
+    b: ["courageous", "intelligent", "assured", "bountiful", "tenacious", "accurate", "audacious", "prudent", "substantial", "earnest", "complex", "obstinate", "alluring", "clear", "ambiguous", "lively", "knowledgeable", "haughty", "competent", "inquisitive", "deceptive", "resolute", "conscientious", "cautious", "enthusiastic"]    
   },
   {
-    a: ["abundant", "ambiguous", "analogous", "apprehensive", "astonishing", "benevolent", "candid", "comprehensive", "conscientious", "controversial", "cumbersome", "diligent", "elaborate", "elusive", "exemplary", "expedite", "fluctuate", "gratuitous", "haphazard", "imminent", "inadvertent", "inquisitive", "insidious", "integral", "intricate", "irresolute", "lucrative", "meticulous", "nuanced", "obsolete", "paradoxical", "perfunctory", "precarious", "prolific", "prosperous", "punctual", "redundant", "reputable", "resilient", "resolute", "scrutinize", "sporadic", "strenuous", "substantial", "superfluous", "tenacious", "transient", "ubiquitous"],
-    b: ["melimpah", "ambigu", "analog", "cemas", "menakjubkan", "dermawan", "terbuka", "komprehensif", "teliti", "kontroversial", "rumit", "gigih", "rinci", "sulit ditangkap", "teladan", "mempercepat", "fluktuatif", "gratis", "sembarangan", "segera", "tidak disengaja", "penasaran", "sia-sia", "integral", "rumit", "ragu-ragu", "menguntungkan", "teliti", "bernuansa", "usang", "paradoks", "cepat-cepat", "berbahaya", "prolifik", "makmur", "tepat waktu", "berlebihan", "terkenal", "teguh", "tegas", "memeriksa dengan teliti", "sporadis", "berat", "substansial", "berlebihan", "teguh", "sementara", "serba ada"]       
+    a: ["abundant", "ambiguous", "anxious", "candid", "confident", "controversial", "diligent", "elaborate", "eloquent", "erratic", "essential", "exquisite", "extravagant", "inquisitive", "notorious", "meticulous", "obscure", "persistent", "prosperous", "resilient", "scrutinize", "sophisticated", "superficial", "tedious", "volatile"],
+    b: ["plentiful", "vague", "worried", "frank", "assured", "contentious", "conscientious", "detailed", "articulate", "unpredictable", "vital", "beautiful", "lavish", "curious", "infamous", "precise", "obscure", "tenacious", "successful", "flexible", "examine closely", "complex", "shallow", "boring", "unstable"]        
   }
 ];
 
