@@ -3,105 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>English Game</title>
+    <title>Grammar Games</title>
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="icon" type="image/x-icon" href="dist/img/favicon.svg" />
   </head>
   <body>
-    <!-- Header Start -->
-    <header
-      class="fixed bottom-0 left-0 right-0 z-50 flex flex-col justify-between border-t-2 border-gray/25 bg-white p-1 sm:right-auto sm:h-full sm:border-r-2 sm:border-t-0 sm:p-3 lg:p-4"
-    >
-      <nav class="w-full">
-        <ul class="flex items-center justify-evenly sm:flex-col sm:gap-8 lg:items-start">
-          <li class="hidden border-b-2 border-gray/25 sm:block">
-            <a href="#" class="mb-8 mt-6 flex items-center gap-2 px-2">
-              <img src="dist/img/uk-flag.svg" alt="UK Flag" class="h-6 rounded" />
-              <span class="hidden text-lg font-bold lg:inline">English Game</span>
-            </a>
-          </li>
-          <li class="lg:w-full">
-            <a href="?category=grammar" class="nav-link [&>div]:bg-sky-500">
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#000000"
-                >
-                  <path
-                    d="M564-80 394-250l56-56 114 114 226-226 56 56L564-80ZM120-320l194-520h94l194 520h-92l-46-132H254l-46 132h-88Zm162-208h156l-76-216h-4l-76 216Z"
-                  />
-                </svg>
+    <!-- Navbar Top Start -->
+    <nav class="fixed left-0 right-0 top-0 w-full border-b-2 border-gray/35 bg-white p-2">
+      <div class="container mx-auto">
+        <ul class="flex justify-center lg:justify-normal">
+          <li>
+            <a href="#" class="flex w-fit items-center gap-2 whitespace-nowrap p-2">
+              <div class="w-8 rounded-lg bg-emerald-500 p-1">
+                <img src="dist/img/grammar.svg" alt="Logo" />
               </div>
-              <span class="hidden lg:inline">Grammar</span></a
-            >
-          </li>
-          <li class="lg:w-full">
-            <a href="?category=vocabulary" class="nav-link [&>div]:bg-yellow-500">
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#000000"
-                >
-                  <path
-                    d="M720-440v-80h160v80H720Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM200-200v-160h-40q-33 0-56.5-23.5T80-440v-80q0-33 23.5-56.5T160-600h160l200-120v480L320-360h-40v160h-80Zm240-182v-196l-98 58H160v80h182l98 58Zm120 36v-268q27 24 43.5 58.5T620-480q0 41-16.5 75.5T560-346ZM300-480Z"
-                  />
-                </svg>
-              </div>
-              <span class="hidden lg:inline">Vocabulary</span></a
-            >
-          </li>
-          <li class="lg:w-full">
-            <a href="?category=reading" class="nav-link [&>div]:bg-emerald-500">
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#000000"
-                >
-                  <path
-                    d="M160-391h45l23-66h104l24 66h44l-97-258h-46l-97 258Zm81-103 38-107h2l38 107h-78Zm319-70v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-600q-38 0-73 9.5T560-564Zm0 220v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-380q-38 0-73 9t-67 27Zm0-110v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-490q-38 0-73 9.5T560-454ZM260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-499Z"
-                  />
-                </svg>
-              </div>
-              <span class="hidden lg:inline">Reading</span></a
+              <span class="font-semibold">Grammar Games</span></a
             >
           </li>
         </ul>
-      </nav>
-      <span class="hidden text-sm lg:mx-auto lg:inline lg:max-w-40"
-        >Made with <span class="font-bold text-pink-500">&hearts;</span> by
-        <span class="font-bold text-sky-500">@farid</span></span
-      >
-    </header>
-    <!-- Header End -->
-
-    <!-- Top Bar Start -->
-    <section>
-      <div
-        class="fixed left-0 right-0 top-0 z-50 m-4 rounded-2xl p-4 text-white sm:left-[4.875rem] lg:left-[12.6rem]"
-        id="top-bar"
-      >
-        <h1 class="mb-4 text-xl font-bold"><span id="category-span" class="uppercase"></span></h1>
-        <h2 class="mb-1 font-semibold">Progress:</h2>
-        <div class="h-4 w-full rounded-full bg-white"></div>
       </div>
-    </section>
-    <!-- Top Bar End -->
+    </nav>
+    <!-- Navbar Top End -->
 
-    <!-- Chapter Start -->
-    <div
-      class="container mx-auto mb-20 mt-40 flex flex-col items-center gap-6 sm:mb-6 sm:pl-[4.875rem] lg:pl-[12.6rem]"
-      id="chapter-container"
-    ></div>
-    <!-- Chapter End -->
-    <script src="dist/js/script.js"></script>
+    <!-- Dashboard Start -->
+    <div class="container mx-auto mt-20 px-4">
+      <div class="rounded-lg p-4 text-white" id="dashboard">
+        <h2 class="text-xl font-semibold"><span id="category-title-span"></span></h2>
+        <p class="mb-4 text-sm"><span id="description-span"></span></p>
+        <div class="flex">
+          <span class="w-full font-semibold">EXP: <span id="score-span"></span></span>
+          <span class="w-full font-semibold">Total EXP: <span id="total-score-span"></span></span>
+        </div>
+      </div>
+    </div>
+    <!-- Dashboard End -->
+
+    <!-- Level Container Start -->
+    <div class="container mx-auto" id="level-container"></div>
+    <!-- Level Container End -->
+
+    <!-- Navbar Bottom Start -->
+    <nav class="fixed bottom-0 left-0 right-0 w-full border-t-2 border-gray/35 bg-white p-2">
+      <div class="container mx-auto">
+        <ul class="flex justify-around md:justify-normal md:gap-4">
+          <li class="md:w-full">
+            <a href="?category=0" class="nav-link flex w-full items-center gap-2 whitespace-nowrap">
+              <div class="w-7 rounded-lg bg-sky-500 p-1"><img src="dist/img/swap.svg" /></div>
+              <span class="hidden md:inline">Word Pairs</span>
+            </a>
+          </li>
+          <li class="md:w-full">
+            <a href="?category=1" class="nav-link flex w-full items-center gap-2 whitespace-nowrap">
+              <div class="w-7 rounded-lg bg-green-500 p-1"><img src="dist/img/shuffle.svg" /></div>
+              <span class="hidden md:inline">Sentence Shuffle</span>
+            </a>
+          </li>
+          <li class="md:w-full">
+            <a href="?category=2" class="nav-link flex w-full items-center gap-2 whitespace-nowrap">
+              <div class="w-7 rounded-lg bg-amber-500 p-1"><img src="dist/img/blank.svg" /></div>
+              <span class="hidden md:inline">Blank Fit</span>
+            </a>
+          </li>
+          <li class="md:w-full">
+            <a href="?category=3" class="nav-link flex w-full items-center gap-2 whitespace-nowrap">
+              <div class="w-7 rounded-lg bg-red-500 p-1"><img src="dist/img/error.svg" /></div>
+              <span class="hidden md:inline">Error Spot</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar Bottom End -->
+    <script src="dist/script.js"></script>
   </body>
 </html>
