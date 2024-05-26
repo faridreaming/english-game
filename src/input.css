@@ -5,13 +5,44 @@
 
 body {
   font-family: "Nunito", "Inter", sans-serif;
-  @apply text-dark;
+  @apply text-midnight;
 }
 
 .nav-link {
-  @apply flex rounded-xl border-2 border-transparent p-2 font-semibold hover:bg-gray/10;
+  @apply hover:bg-charcoal/10 flex rounded-xl border-2 border-transparent p-2 font-semibold;
 }
 
 .nav-link.active {
-  @apply border-gray/50 bg-gray/10;
+  @apply border-charcoal/50 bg-charcoal/10;
+}
+
+#confirm-popup.hidden,
+#game-over-popup.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#confirm-popup.visible,
+#game-over-popup.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pair-a-selected,
+.pair-b-selected {
+  @apply border-charcoal;
+}
+
+.pair-a-correct,
+.pair-b-correct {
+  @apply border-emerald-500 bg-emerald-50;
+}
+
+#pair-a div:not(.pair-a-selected):not(.pair-a-correct):hover,
+#pair-b div:not(.pair-b-selected):not(.pair-b-correct):hover {
+  @apply bg-charcoal/10;
+}
+
+.pair-incorrect {
+  @apply border-red-500 bg-red-50;
 }

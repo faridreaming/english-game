@@ -45,11 +45,12 @@ document.getElementById("description-span").textContent =
   selectedCategory.description;
 document.getElementById("dashboard").classList.add(selectedCategory.bgColor);
 
-// Set active navigation link and update category images
+// Set active navigation link and update level buttons
 document.querySelectorAll(".nav-link")[categoryIndex].classList.add("active");
-document.querySelectorAll(".category-image").forEach((imageContainer) => {
-  imageContainer.classList.add(selectedCategory.bgColor);
-  imageContainer.querySelector("div img").src = selectedCategory.icon;
+document.querySelectorAll(".level-button").forEach((button, level) => {
+  button.href = `game-${categoryIndex}.html?level=${level + 1}`;
+  button.querySelector("div").classList.add(selectedCategory.bgColor);
+  button.querySelector("div div img").src = selectedCategory.icon;
 });
 
 // Retrieve and handle total EXP
