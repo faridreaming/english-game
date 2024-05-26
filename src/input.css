@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Nunito", "Inter", sans-serif;
+  @apply text-dark;
+}
+
+.nav-link {
+  @apply my-1 flex w-full flex-nowrap items-center gap-2 rounded-lg border-2 border-transparent p-1 font-semibold text-gray transition duration-300 ease-in-out hover:bg-gray/10 sm:rounded-xl sm:p-2 [&>div>svg]:h-5 [&>div>svg]:w-5 [&>div>svg]:fill-white sm:[&>div>svg]:h-6 sm:[&>div>svg]:w-6 [&>div]:rounded [&>div]:p-1;
+}
