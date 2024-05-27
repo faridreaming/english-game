@@ -48,16 +48,52 @@ document.getElementById("game-over-quit").addEventListener("click", () => {
 // prettier-ignore
 let words = [
   {
-    a: ["big", "happy", "fast", "hot", "small", "sad", "tired", "old", "new", "pretty", "angry", "funny", "quiet", "loud", "hard", "soft", "strong", "weak", "young", "old", "smart", "easy", "difficult", "beautiful", "ugly"],
-    b: ["large", "glad", "quick", "warm", "little", "unhappy", "sleepy", "elderly", "modern", "attractive", "furious", "amusing", "silent", "noisy", "difficult", "gentle", "powerful", "fragile", "youthful", "aged", "intelligent", "simple", "challenging", "attractive", "unattractive"]    
+    a: [
+      "happy", "sad", "fast", "slow", "hot", "cold", "hard", "easy", "big", "small",
+      "old", "new", "good", "bad", "high", "low", "rich", "poor", "smart", "dumb",
+      "strong", "weak", "light", "heavy", "near", "far", "early", "late", "clean", "dirty",
+      "long", "short", "right", "wrong", "loud", "quiet", "bright", "dark", "sharp", "dull",
+      "smooth", "rough", "tight", "loose", "wet", "dry", "thick", "thin", "soft", "hard"
+    ],
+    b: [
+      "joyful", "unhappy", "quick", "leisurely", "warm", "chilly", "difficult", "simple", "large", "tiny",
+      "ancient", "modern", "excellent", "terrible", "tall", "deep", "wealthy", "needy", "intelligent", "silly",
+      "powerful", "frail", "illuminated", "weighty", "close", "distant", "prompt", "delayed", "spotless", "filthy",
+      "extended", "brief", "correct", "incorrect", "noisy", "silent", "luminous", "gloomy", "keen", "blunt",
+      "silky", "coarse", "snug", "slack", "damp", "arid", "bulky", "slender", "tender", "firm"
+    ]
   },
   {
-    a: ["brave", "clever", "confident", "generous", "persistent", "precise", "reckless", "sensible", "significant", "sincere", "sophisticated", "stubborn", "tempting", "transparent", "vague", "vivid", "wise", "arrogant", "capable", "curious", "deceitful", "determined", "diligent", "discreet", "eager"],
-    b: ["courageous", "intelligent", "assured", "bountiful", "tenacious", "accurate", "audacious", "prudent", "substantial", "earnest", "complex", "obstinate", "alluring", "clear", "ambiguous", "lively", "knowledgeable", "haughty", "competent", "inquisitive", "deceptive", "resolute", "conscientious", "cautious", "enthusiastic"]    
+    a: [
+      "average", "central", "common", "fair", "intermediary", "intervening", "mean", "median", "medium", "middling",
+      "moderate", "neutral", "normal", "standard", "typical", "adequate", "conventional", "routine", "usual", "commonplace",
+      "tolerable", "passable", "popular", "reasonable", "modest", "intermediate", "middle", "mid", "midway", "mediate",
+      "negotiate", "arbitrate", "moderate", "conciliate", "halfway", "in-between", "inner", "grey", "innermost", "borderline",
+      "gray", "inmost", "betwixt and between", "buffer", "negotiator", "broker", "liaison", "ambassador", "honest broker", "middleman"
+    ],
+    b: [
+      "typical", "main", "widespread", "equitable", "go-between", "occurring", "central", "core", "intermediate", "average",
+      "balanced", "impartial", "customary", "regular", "habitual", "sufficient", "traditional", "everyday", "common", "ordinary",
+      "acceptable", "satisfactory", "favored", "sensible", "moderate", "transitional", "midpoint", "centre", "halfway", "go-between",
+      "discuss", "settle", "temper", "reconcile", "central", "middle", "internal", "unclear", "closest", "marginal",
+      "vague", "deepest", "between", "intermediary", "mediator", "agent", "representative", "delegate", "peacemaker", "facilitator"
+    ]   
   },
   {
-    a: ["abundant", "ambiguous", "anxious", "candid", "confident", "controversial", "diligent", "elaborate", "eloquent", "erratic", "essential", "exquisite", "extravagant", "inquisitive", "notorious", "meticulous", "obscure", "persistent", "prosperous", "resilient", "scrutinize", "sophisticated", "superficial", "tedious", "volatile"],
-    b: ["plentiful", "vague", "worried", "frank", "assured", "contentious", "conscientious", "detailed", "articulate", "unpredictable", "vital", "beautiful", "lavish", "curious", "infamous", "precise", "obscure", "tenacious", "successful", "flexible", "examine closely", "complex", "shallow", "boring", "unstable"]        
+    a: [
+      "construe", "peruse", "condone", "latent", "acrimonious", "indubitable", "propitious", "tremulous", "masquerade", "salient",
+      "embroil", "languish", "aspersion", "sedulous", "pertinacious", "encumber", "obfuscate", "vindicate", "stymie", "recalcitrant",
+      "pulchritude", "grandiloquent", "unfettered", "quintessential", "surreptitious", "incontrovertible", "pugnacious", "insidious", "ubiquitous", "vicissitude",
+      "prognosticate", "serendipity", "ephemeral", "loquacious", "disparate", "ameliorate", "circumvent", "prevaricate", "demagogue", "enigmatic",
+      "autonomy", "benevolent", "cognizant", "dichotomy", "equivocate", "facetious", "gregarious", "heuristic", "iconoclast", "juxtapose"
+    ],
+    b: [
+      "interpret", "examine", "overlook", "dormant", "bitter", "undeniable", "favorable", "shaking", "pretend", "prominent",
+      "involve", "weaken", "slander", "diligent", "stubborn", "hinder", "confuse", "justify", "thwart", "defiant",
+      "beauty", "bombastic", "liberated", "perfect", "clandestine", "undeniable", "combative", "treacherous", "omnipresent", "change",
+      "predict", "luck", "transitory", "talkative", "different", "improve", "bypass", "lie", "agitator", "mysterious",
+      "independence", "kind", "aware", "contrast", "mislead", "joking", "social", "exploratory", "rebel", "compare"
+    ]     
   }
 ];
 

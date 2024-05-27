@@ -9,7 +9,7 @@ body {
 }
 
 .nav-link {
-  @apply hover:bg-charcoal/10 flex rounded-xl border-2 border-transparent p-2 font-semibold;
+  @apply hover:bg-charcoal/10 flex rounded-xl border-2 border-transparent p-2 font-semibold transition duration-200 ease-in-out;
 }
 
 .nav-link.active {

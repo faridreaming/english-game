@@ -2,9 +2,9 @@ const level = Number(new URLSearchParams(window.location.search).get("level"));
 const expReward = level === 1 ? 15 : level === 2 ? 30 : 50;
 document.getElementById("exp-span").textContent = expReward;
 
-document.title = `Translation Pairs | Level ${level}`;
+document.title = `Antonym Pairs | Level ${level}`;
 document.getElementById("logo-span").textContent =
-  `Translation Pairs Level ${level}`;
+  `Antonym Pairs Level ${level}`;
 document
   .getElementById("back-button")
   .addEventListener("click", showConfirmPopup);
@@ -26,7 +26,7 @@ function hideConfirmPopup() {
 }
 
 document.getElementById("confirm-yes").addEventListener("click", () => {
-  window.location.href = "index.html?category=0";
+  window.location.href = "index.html?category=2";
 });
 
 function showGameOverPopup() {
@@ -41,7 +41,7 @@ document.getElementById("game-over-retry").addEventListener("click", () => {
 });
 
 document.getElementById("game-over-quit").addEventListener("click", () => {
-  window.location.href = "index.html?category=0";
+  window.location.href = "index.html?category=1";
 });
 
 // Game Mechanism
@@ -49,48 +49,52 @@ document.getElementById("game-over-quit").addEventListener("click", () => {
 let words = [
   {
     a: [
-      "hello", "goodbye", "please", "thank you", "yes", "no", "excuse me", "sorry", "help", "stop",
-      "go", "come", "wait", "listen", "speak", "write", "read", "walk", "run", "drive",
-      "eat", "drink", "sleep", "wake", "play", "work", "study", "shop", "cook", "clean",
-      "laugh", "cry", "smile", "angry", "happy", "sad", "big", "small", "hot", "cold",
-      "fast", "slow", "new", "old", "good", "bad", "light", "heavy", "hard", "easy"
+      "happy", "sad", "fast", "slow", "hot", "cold", "hard", "easy", "big", "small",
+      "old", "new", "good", "bad", "high", "low", "rich", "poor", "smart", "dumb",
+      "strong", "weak", "light", "heavy", "near", "far", "early", "late", "clean", "dirty",
+      "long", "short", "right", "wrong", "loud", "quiet", "bright", "dark", "sharp", "dull",
+      "smooth", "rough", "tight", "loose", "wet", "dry", "thick", "thin", "soft", "hard",
+      "alive", "dead", "true", "false", "pass", "fail", "day", "night", "junior", "senior"
     ],
     b: [
-      "halo", "selamat tinggal", "tolong", "terima kasih", "ya", "tidak", "permisi", "maaf", "bantu", "berhenti",
-      "pergi", "datang", "tunggu", "dengar", "bicara", "tulis", "baca", "jalan", "lari", "mengemudi",
-      "makan", "minum", "tidur", "bangun", "main", "kerja", "belajar", "belanja", "masak", "bersih",
-      "tertawa", "menangis", "senyum", "marah", "bahagia", "sedih", "besar", "kecil", "panas", "dingin",
-      "cepat", "lambat", "baru", "lama", "bagus", "buruk", "ringan", "berat", "keras", "mudah"
-    ]   
+      "unhappy", "joyful", "slow", "quick", "cold", "warm", "easy", "difficult", "small", "large",
+      "new", "ancient", "bad", "excellent", "low", "tall", "poor", "wealthy", "silly", "intelligent",
+      "frail", "powerful", "heavy", "illuminated", "far", "close", "late", "prompt", "dirty", "spotless",
+      "short", "extended", "wrong", "correct", "quiet", "noisy", "dark", "luminous", "dull", "keen",
+      "rough", "silky", "loose", "snug", "dry", "damp", "thin", "bulky", "firm", "tender",
+      "dead", "alive", "false", "true", "fail", "pass", "night", "day", "senior", "junior"
+    ]
   },
   {
     a: [
-      "achievement", "adapt", "advocate", "ambiguous", "analyze", "annotate", "anticipate", "apparent", "arbitrary", "assert",
-      "assess", "assume", "authorize", "bias", "capacity", "cite", "clarify", "complement", "comply", "compose",
-      "comprehensive", "conceive", "concurrent", "conduct", "conflict", "consent", "constrain", "controversy", "convene", "coordinate",
-      "correlate", "criteria", "deduce", "demonstrate", "denote", "depress", "derive", "designate", "detect", "deviate",
-      "differentiate", "diminish", "discrete", "discriminate", "displace", "display", "dispose", "distinct", "dominate", "emphasis"
+      "average", "central", "common", "fair", "intermediary", "intervening", "mean", "median", "medium", "middling",
+      "moderate", "neutral", "normal", "standard", "typical", "adequate", "conventional", "routine", "usual", "commonplace",
+      "tolerable", "passable", "popular", "reasonable", "modest", "intermediate", "middle", "mid", "midway", "mediate",
+      "negotiate", "arbitrate", "moderate", "conciliate", "halfway", "in-between", "inner", "grey", "innermost", "borderline",
+      "gray", "inmost", "betwixt and between", "buffer", "negotiator", "broker", "liaison", "ambassador", "honest broker", "middleman"
     ],
     b: [
-      "prestasi", "menyesuaikan", "menganjurkan", "samar", "menganalisis", "mengomentari", "mengantisipasi", "jelas", "sewenang-wenang", "menegaskan",
-      "menilai", "menganggap", "memberi wewenang", "praduga", "kapasitas", "mengutip", "memperjelas", "melengkapi", "mematuhi", "mengarang",
-      "komprehensif", "membayangkan", "bersamaan", "melakukan", "konflik", "persetujuan", "membatasi", "kontroversi", "berkumpul", "koordinasi",
-      "berkorelasi", "kriteria", "menarik kesimpulan", "menunjukkan", "menandakan", "menekan", "memperoleh", "menunjuk", "mendeteksi", "menyimpang",
-      "membedakan", "mengurangi", "terpisah", "membeda-bedakan", "menggantikan", "menampilkan", "memusnahkan", "berbeda", "mendominasi", "penekanan"
-    ]  
+      "extreme", "outermost", "rare", "unjust", "final", "initial", "extreme", "extremity", "extreme", "extreme",
+      "extreme", "biased", "abnormal", "unconventional", "atypical", "inadequate", "unorthodox", "irregular", "uncommon", "unusual",
+      "intolerable", "unacceptable", "unpopular", "unreasonable", "extravagant", "final", "extremity", "extremity", "extremity", "final",
+      "refuse", "disagree", "extremist", "dispute", "extremity", "extremity", "outer", "black", "outermost", "definite",
+      "black", "outermost", "definite", "no buffer", "refuser", "outsider", "stranger", "enemy", "deceiver", "outsider"
+    ]
   },
   {
     a: [
-      "articulate", "comprehend", "synthesize", "enhance", "innovate", "navigate", "negotiate", "persuade", "prioritize", "refine",
-      "simplify", "sustain", "transform", "utilize", "validate", "visualize", "advocate", "collaborate", "conceptualize", "cultivate",
-      "devise", "diagnose", "differentiate", "facilitate", "illustrate", "integrate", "mediate", "mitigate", "mobilize", "modulate",
-      "optimize", "orchestrate", "parallel", "perpetuate", "reconcile", "reconstruct", "reiterate", "replicate", "synthesize", "theorize"
+      "construe", "peruse", "condone", "latent", "acrimonious", "indubitable", "propitious", "tremulous", "masquerade", "salient",
+      "embroil", "languish", "aspersion", "sedulous", "pertinacious", "encumber", "obfuscate", "vindicate", "stymie", "recalcitrant",
+      "pulchritude", "grandiloquent", "unfettered", "quintessential", "surreptitious", "incontrovertible", "pugnacious", "insidious", "ubiquitous", "vicissitude",
+      "prognosticate", "serendipity", "ephemeral", "loquacious", "disparate", "ameliorate", "circumvent", "prevaricate", "demagogue", "enigmatic",
+      "autonomy", "benevolent", "cognizant", "dichotomy", "equivocate", "facetious", "gregarious", "heuristic", "iconoclast", "juxtapose"
     ],
     b: [
-      "artikulasi", "memahami", "mensintesis", "meningkatkan", "berinovasi", "menavigasi", "menegosiasi", "meyakinkan", "memprioritaskan", "menyempurnakan",
-      "mempermudah", "mempertahankan", "mentransformasi", "menggunakan", "memvalidasi", "memvisualisasikan", "menganjurkan", "berkolaborasi", "mengkonseptualisasikan", "mengembangkan",
-      "merancang", "mendiagnosis", "membedakan", "memfasilitasi", "mengilustrasikan", "mengintegrasikan", "memediasi", "meringankan", "memobilisasi", "memodulasi",
-      "mengoptimalkan", "mengorkestrasi", "sejajar", "mempertahankan", "mendamaikan", "merekonstruksi", "mengulangi", "mereplikasi", "mensintesis", "membuat teori"
+      "misinterpret", "skim", "denounce", "obvious", "amicable", "questionable", "inauspicious", "steady", "reality", "unimportant",
+      "disentangle", "thrive", "endorsement", "negligent", "compliant", "unburden", "clarify", "impugn", "facilitate", "compliant",
+      "ugliness", "plain-spoken", "restrained", "nonessential", "overt", "controversial", "peaceable", "honest", "rare", "stability",
+      "disregard", "misfortune", "permanent", "reticent", "similar", "worsen", "follow", "verify", "peacemaker", "transparent",
+      "dependence", "malevolent", "unaware", "unity", "be direct", "serious", "antisocial", "conventional", "conformist", "separate"
     ]
   }
 ];
