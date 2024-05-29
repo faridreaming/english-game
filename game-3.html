@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="dist/output.css" />
+    <link rel="icon" type="image/x-icon" href="dist/img/favicon.svg" />
+  </head>
+  <body>
+    <!-- Navbar Top Start -->
+    <nav
+      class="fixed left-0 right-0 top-0 w-full border-b-2 border-charcoal/35 bg-white p-2"
+    >
+      <div
+        class="absolute top-1/2 z-50 h-fit -translate-y-1/2 cursor-pointer rounded-lg p-2 text-midnight transition duration-200 ease-in-out hover:text-midnight/50"
+        id="back-button"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          class="fill-current"
+        >
+          <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+        </svg>
+      </div>
+      <div class="container mx-auto">
+        <ul class="flex justify-center">
+          <li>
+            <a
+              href="#"
+              class="flex w-fit items-center gap-2 whitespace-nowrap p-2"
+            >
+              <div class="w-8 rounded-lg bg-red-500 p-1">
+                <img src="dist/img/three.svg" alt="Logo" />
+              </div>
+              <span class="font-semibold"><span id="logo-span"></span></span
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar Top End -->
+
+    <!-- Game Container Start -->
+    <div class="container mx-auto mb-4 mt-20 flex items-center px-4">
+      <div class="flex w-full gap-4">
+        <div
+          id="pair-a"
+          class="flex w-1/2 flex-col items-end gap-4 [&>div>span]:break-words [&>div]:max-w-sm"
+        >
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+        </div>
+        <div
+          id="pair-b"
+          class="flex w-1/2 flex-col items-start gap-4 [&>div>span]:break-words [&>div]:max-w-sm"
+        >
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+          <div
+            class="w-full cursor-pointer rounded-xl border-2 border-b-4 border-charcoal/35 p-3 text-center transition duration-200 ease-in-out sm:py-4"
+          >
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Game Container End -->
+
+    <!-- Confirm Pop Up Start -->
+    <div
+      class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-50 bg-midnight/50 opacity-0 transition-opacity duration-200 ease-in-out"
+      id="confirm-popup"
+    >
+      <div class="flex h-full w-full items-center justify-center p-4">
+        <div class="w-fit">
+          <div
+            class="relative rounded-lg bg-white p-4 sm:p-8 md:px-16 md:py-12"
+          >
+            <div class="absolute right-0 top-0 p-2">
+              <div
+                class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-charcoal/10 text-xl font-semibold transition duration-200 ease-in-out hover:bg-charcoal/20"
+                id="confirm-close"
+              >
+                &times;
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-xl font-bold">Are you sure?</div>
+              <div>You will lose all your progress and have to start over.</div>
+            </div>
+            <div class="mt-4 flex justify-center gap-4">
+              <button
+                class="w-full rounded-md border-2 border-charcoal py-2 font-semibold transition duration-200 ease-in-out hover:bg-charcoal/10"
+                id="confirm-no"
+              >
+                No
+              </button>
+              <button
+                class="w-full rounded-md bg-rose-500 py-2 font-semibold text-white transition duration-200 ease-in-out hover:bg-rose-400"
+                id="confirm-yes"
+              >
+                Yes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Confirm Pop Up End -->
+
+    <!-- Game Over Pop Up Start -->
+    <div
+      class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-50 bg-midnight/50 opacity-0 transition-opacity duration-200 ease-in-out"
+      id="game-over-popup"
+    >
+      <div class="flex h-full w-full items-center justify-center p-4">
+        <div class="w-fit">
+          <div
+            class="relative rounded-lg bg-white p-4 sm:p-8 md:px-16 md:py-12"
+          >
+            <div class="absolute right-0 top-0 p-2">
+              <div
+                class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-charcoal/10 text-xl font-semibold transition duration-200 ease-in-out hover:bg-charcoal/20"
+                id="game-over-close"
+              >
+                &times;
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-xl font-bold">Game over</div>
+              <div>
+                Congratulations, you win the match! You scored
+                <span id="exp-span"></span> EXP
+              </div>
+            </div>
+            <div class="mt-4 flex justify-center gap-4">
+              <button
+                class="w-full rounded-md border-2 border-charcoal py-2 font-semibold transition duration-200 ease-in-out hover:bg-charcoal/10"
+                id="game-over-quit"
+              >
+                Quit
+              </button>
+              <button
+                class="w-full rounded-md bg-emerald-500 py-2 font-semibold text-white transition duration-200 ease-in-out hover:bg-emerald-400"
+                id="game-over-retry"
+              >
+                Retry
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Game Over Pop Up End -->
+
+    <script src="dist/js/game-3.js"></script>
+  </body>
+</html>

@@ -2,9 +2,9 @@ const level = Number(new URLSearchParams(window.location.search).get("level"));
 const expReward = level === 1 ? 15 : level === 2 ? 30 : 50;
 document.getElementById("exp-span").textContent = expReward;
 
-document.title = `Antonym Pairs | Level ${level}`;
+document.title = `Verb 3 Pairs | Level ${level}`;
 document.getElementById("logo-span").textContent =
-  `Antonym Pairs Level ${level}`;
+  `Verb 3 Pairs Level ${level}`;
 document
   .getElementById("back-button")
   .addEventListener("click", showConfirmPopup);
@@ -30,7 +30,7 @@ function hideConfirmPopup() {
 }
 
 document.getElementById("confirm-yes").addEventListener("click", () => {
-  window.location.href = "index.html?category=2";
+  window.location.href = "index.html?category=3";
 });
 
 function showGameOverPopup() {
@@ -50,7 +50,7 @@ document.getElementById("game-over-retry").addEventListener("click", () => {
 });
 
 document.getElementById("game-over-quit").addEventListener("click", () => {
-  window.location.href = "index.html?category=2";
+  window.location.href = "index.html?category=3";
 });
 
 // Game Mechanism
@@ -58,52 +58,26 @@ document.getElementById("game-over-quit").addEventListener("click", () => {
 let words = [
   {
     a: [
-      "happy", "sad", "fast", "slow", "hot", "cold", "hard", "easy", "big", "small",
-      "old", "new", "good", "bad", "high", "low", "rich", "poor", "smart", "dumb",
-      "strong", "weak", "light", "heavy", "near", "far", "early", "late", "clean", "dirty",
-      "long", "short", "right", "wrong", "loud", "quiet", "bright", "dark", "sharp", "dull",
-      "smooth", "rough", "tight", "loose", "wet", "dry", "thick", "thin", "soft", "hard",
-      "alive", "dead", "true", "false", "pass", "fail", "day", "night", "junior", "senior"
+      "accept", "ask", "bake", "call", "dance", "enjoy", "follow", "guess", "help", "introduce", "join", "kick", "laugh", "move", "notice", "open", "play", "question", "remember", "send", "talk", "use", "visit", "wait", "yell", "arrange", "arrive", "attack", "behave", "believe", "belong", "blame", "borrow", "bother", "clean", "discover", "earn", "explain", "fill", "fix", "gather", "handle", "judge", "keep", "learn", "listen", "manage", "need", "offer", "paint"
     ],
     b: [
-      "unhappy", "joyful", "slow", "quick", "cold", "warm", "easy", "difficult", "small", "large",
-      "new", "ancient", "bad", "excellent", "low", "tall", "poor", "wealthy", "silly", "intelligent",
-      "frail", "powerful", "heavy", "illuminated", "far", "close", "late", "prompt", "dirty", "spotless",
-      "short", "extended", "wrong", "correct", "quiet", "noisy", "dark", "luminous", "dull", "keen",
-      "rough", "silky", "loose", "snug", "dry", "damp", "thin", "bulky", "firm", "tender",
-      "dead", "alive", "false", "true", "fail", "pass", "night", "day", "senior", "junior"
+      "accepted", "asked", "baked", "called", "danced", "enjoyed", "followed", "guessed", "helped", "introduced", "joined", "kicked", "laughed", "moved", "noticed", "opened", "played", "questioned", "remembered", "sent", "talked", "used", "visited", "waited", "yelled", "arranged", "arrived", "attacked", "behaved", "believed", "belonged", "blamed", "borrowed", "bothered", "cleaned", "discovered", "earned", "explained", "filled", "fixed", "gathered", "handled", "judged", "kept", "learned", "listened", "managed", "needed", "offered", "painted"
     ]
   },
   {
     a: [
-      "average", "central", "common", "fair", "intermediary", "intervening", "mean", "median", "medium", "middling",
-      "moderate", "neutral", "normal", "standard", "typical", "adequate", "conventional", "routine", "usual", "commonplace",
-      "tolerable", "passable", "popular", "reasonable", "modest", "intermediate", "middle", "mid", "midway", "mediate",
-      "negotiate", "arbitrate", "moderate", "conciliate", "halfway", "in-between", "inner", "grey", "innermost", "borderline",
-      "gray", "inmost", "betwixt and between", "buffer", "negotiator", "broker", "liaison", "ambassador", "honest broker", "middleman"
+      "be", "become", "begin", "bite", "blow", "break", "bring", "build", "burn", "buy", "catch", "choose", "come", "cost", "cut", "do", "draw", "dream", "drink", "drive", "eat", "fall", "feed", "feel", "fight", "find", "fly", "forget", "forgive", "freeze", "get", "give", "go", "grow", "have", "hear", "hide", "hit", "hold", "hurt", "keep", "know", "lay", "lead", "lean", "leave", "lend", "let", "lose"
     ],
     b: [
-      "extreme", "outermost", "rare", "unjust", "final", "initial", "extreme", "extremity", "extreme", "extreme",
-      "extreme", "biased", "abnormal", "unconventional", "atypical", "inadequate", "unorthodox", "irregular", "uncommon", "unusual",
-      "intolerable", "unacceptable", "unpopular", "unreasonable", "extravagant", "final", "extremity", "extremity", "extremity", "final",
-      "refuse", "disagree", "extremist", "dispute", "extremity", "extremity", "outer", "black", "outermost", "definite",
-      "black", "outermost", "definite", "no buffer", "refuser", "outsider", "stranger", "enemy", "deceiver", "outsider"
+      "been", "become", "begun", "bitten", "blown", "broken", "brought", "built", "burnt", "bought", "caught", "chosen", "come", "cost", "cut", "done", "drawn", "dreamt", "drunk", "driven", "eaten", "fallen", "fed", "felt", "fought", "found", "flown", "forgotten", "forgiven", "frozen", "got", "given", "gone", "grown", "had", "heard", "hidden", "hit", "held", "hurt", "kept", "known", "laid", "led", "leant", "left", "lent", "let", "lost"
     ]
   },
   {
     a: [
-      "construe", "peruse", "condone", "latent", "acrimonious", "indubitable", "propitious", "tremulous", "masquerade", "salient",
-      "embroil", "languish", "aspersion", "sedulous", "pertinacious", "encumber", "obfuscate", "vindicate", "stymie", "recalcitrant",
-      "pulchritude", "grandiloquent", "unfettered", "quintessential", "surreptitious", "incontrovertible", "pugnacious", "insidious", "ubiquitous", "vicissitude",
-      "prognosticate", "serendipity", "ephemeral", "loquacious", "disparate", "ameliorate", "circumvent", "prevaricate", "demagogue", "enigmatic",
-      "autonomy", "benevolent", "cognizant", "dichotomy", "equivocate", "facetious", "gregarious", "heuristic", "iconoclast", "juxtapose"
+      "arise", "awake", "bear", "behold", "bind", "breed", "cast", "cling", "creep", "deal", "dig", "dwell", "flee", "fling", "grind", "hang", "knit", "leap", "mow", "overcome", "plead", "prove", "ride", "ring", "rise", "saw", "seek", "sew", "shake", "shave", "shear", "shed", "shrink", "shut", "slay", "slink", "smite", "sow", "spin", "spit", "split", "spread", "spring", "stick", "sting", "stink", "stride", "strike", "string"
     ],
     b: [
-      "misinterpret", "skim", "denounce", "obvious", "amicable", "questionable", "inauspicious", "steady", "reality", "unimportant",
-      "disentangle", "thrive", "endorsement", "negligent", "compliant", "unburden", "clarify", "impugn", "facilitate", "compliant",
-      "ugliness", "plain-spoken", "restrained", "nonessential", "overt", "controversial", "peaceable", "honest", "rare", "stability",
-      "disregard", "misfortune", "permanent", "reticent", "similar", "worsen", "follow", "verify", "peacemaker", "transparent",
-      "dependence", "malevolent", "unaware", "unity", "be direct", "serious", "antisocial", "conventional", "conformist", "separate"
+      "arisen", "awoken", "borne", "beheld", "bound", "bred", "cast", "clung", "crept", "dealt", "dug", "dwelt", "fled", "flung", "ground", "hung", "knit", "leapt", "mown", "overcome", "pled", "proven", "ridden", "rung", "risen", "sawn", "sought", "sewn", "shaken", "shaven", "shorn", "shed", "shrunk", "shut", "slain", "slunk", "smitten", "sown", "spun", "spat", "split", "spread", "sprung", "stuck", "stung", "stunk", "stridden", "struck", "strung"
     ]
   }
 ];

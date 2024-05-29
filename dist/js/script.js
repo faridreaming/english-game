@@ -20,6 +20,14 @@ const categories = [
     bgColor: "bg-[#f59e0b]",
     icon: "dist/img/switch.svg",
   },
+  {
+    title: "Verb 3",
+    description:
+      "Match the base form of verbs with their past participle forms (Verb 3).",
+    primaryColor: "#ef4444",
+    bgColor: "bg-[#ef4444]",
+    icon: "dist/img/three.svg",
+  },
 ];
 
 const categoryIndex =
