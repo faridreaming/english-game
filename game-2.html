@@ -137,25 +137,34 @@
       id="confirm-popup"
     >
       <div class="flex h-full w-full items-center justify-center p-4">
-        <div class="w-fit overflow-hidden shadow-2xl">
-          <span
-            class="block rounded-t-lg bg-amber-500 px-4 py-2 font-bold text-white"
-            >Confirm</span
+        <div class="w-fit">
+          <div
+            class="relative rounded-lg bg-white p-4 sm:p-8 md:px-16 md:py-12"
           >
-          <div class="rounded-b-lg bg-white p-4">
-            <span class="text-center">Quit now? Progress will be lost.</span>
+            <div class="absolute right-0 top-0 p-2">
+              <div
+                class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-charcoal/10 text-xl font-semibold transition duration-200 ease-in-out hover:bg-charcoal/20"
+                id="confirm-close"
+              >
+                &times;
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-xl font-bold">Are you sure?</div>
+              <div>You will lose all your progress and have to start over.</div>
+            </div>
             <div class="mt-4 flex justify-center gap-4">
               <button
-                class="w-full rounded-md bg-rose-500 py-1 font-semibold text-white transition duration-200 ease-in-out hover:bg-rose-400"
-                id="confirm-yes"
-              >
-                Yes
-              </button>
-              <button
-                class="w-full rounded-md bg-sky-500 py-1 font-semibold text-white transition duration-200 ease-in-out hover:bg-sky-400"
+                class="w-full rounded-md border-2 border-charcoal py-2 font-semibold transition duration-200 ease-in-out hover:bg-charcoal/10"
                 id="confirm-no"
               >
                 No
+              </button>
+              <button
+                class="w-full rounded-md bg-rose-500 py-2 font-semibold text-white transition duration-200 ease-in-out hover:bg-rose-400"
+                id="confirm-yes"
+              >
+                Yes
               </button>
             </div>
           </div>
@@ -170,24 +179,34 @@
       id="game-over-popup"
     >
       <div class="flex h-full w-full items-center justify-center p-4">
-        <div class="w-fit overflow-hidden shadow-2xl">
-          <span
-            class="block rounded-t-lg bg-amber-500 px-4 py-2 font-bold text-white"
-            >Game Over</span
+        <div class="w-fit">
+          <div
+            class="relative rounded-lg bg-white p-4 sm:p-8 md:px-16 md:py-12"
           >
-          <div class="rounded-b-lg bg-white p-4">
-            <p class="text-center">
-              Congratulations! You scored <span id="exp-span"></span> EXP
-            </p>
+            <div class="absolute right-0 top-0 p-2">
+              <div
+                class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-charcoal/10 text-xl font-semibold transition duration-200 ease-in-out hover:bg-charcoal/20"
+                id="game-over-close"
+              >
+                &times;
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-xl font-bold">Game over</div>
+              <div>
+                Congratulations, you win the match! You scored
+                <span id="exp-span"></span> EXP
+              </div>
+            </div>
             <div class="mt-4 flex justify-center gap-4">
               <button
-                class="w-full rounded-md bg-rose-500 py-1 font-semibold text-white transition duration-200 ease-in-out hover:bg-rose-400"
+                class="w-full rounded-md border-2 border-charcoal py-2 font-semibold transition duration-200 ease-in-out hover:bg-charcoal/10"
                 id="game-over-quit"
               >
                 Quit
               </button>
               <button
-                class="w-full rounded-md bg-sky-500 py-1 font-semibold text-white transition duration-200 ease-in-out hover:bg-sky-400"
+                class="w-full rounded-md bg-emerald-500 py-2 font-semibold text-white transition duration-200 ease-in-out hover:bg-emerald-400"
                 id="game-over-retry"
               >
                 Retry

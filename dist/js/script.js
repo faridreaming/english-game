@@ -43,5 +43,45 @@ document.querySelectorAll(".level-button").forEach((button, level) => {
 });
 
 // Retrieve and handle total EXP
+const totalExpSpan = document.getElementById("total-exp-span");
+const resetExpButton = document.getElementById("reset-exp-button");
+
 const totalEXP = localStorage.getItem("totalEXP") || 0;
-document.getElementById("total-exp-span").textContent = totalEXP;
+totalExpSpan.textContent = totalEXP;
+
+totalExpSpan.addEventListener("click", () => {
+  resetExpButton.classList.toggle("opacity-0");
+  resetExpButton.classList.toggle("pointer-events-none");
+});
+
+resetExpButton.addEventListener("click", showConfirmPopup);
+
+document.getElementById("confirm-yes").addEventListener("click", () => {
+  localStorage.setItem("totalEXP", 0);
+  totalExpSpan.textContent = 0;
+  resetExpButton.classList.toggle("opacity-0");
+  resetExpButton.classList.toggle("pointer-events-none");
+  hideConfirmPopup();
+});
+
+document.getElementById("confirm-no").addEventListener("click", () => {
+  resetExpButton.classList.toggle("opacity-0");
+  resetExpButton.classList.toggle("pointer-events-none");
+  hideConfirmPopup();
+});
+
+document
+  .getElementById("confirm-close")
+  .addEventListener("click", hideConfirmPopup);
+
+function showConfirmPopup() {
+  const popup = document.getElementById("confirm-popup");
+  popup.classList.remove("hidden");
+  setTimeout(() => popup.classList.add("visible"), 0);
+}
+
+function hideConfirmPopup() {
+  const popup = document.getElementById("confirm-popup");
+  popup.classList.remove("visible");
+  setTimeout(() => popup.classList.add("hidden"), 200);
+}

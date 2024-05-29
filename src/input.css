@@ -28,6 +28,11 @@ body {
   pointer-events: auto;
 }
 
+#pair-a,
+#pair-b {
+  @apply decoration-transparent;
+}
+
 .pair-a-selected,
 .pair-b-selected {
   @apply border-charcoal;
@@ -35,7 +40,7 @@ body {
 
 .pair-a-correct,
 .pair-b-correct {
-  @apply pointer-events-none border-emerald-500 bg-emerald-50;
+  @apply pointer-events-none decoration-pink-500/50 decoration-2 border-transparent line-through;
 }
 
 #pair-a div:not(.pair-a-selected):not(.pair-a-correct):hover,

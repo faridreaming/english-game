@@ -19,6 +19,10 @@ document
   .getElementById("confirm-no")
   .addEventListener("click", hideConfirmPopup);
 
+document
+  .getElementById("confirm-close")
+  .addEventListener("click", hideConfirmPopup);
+
 function hideConfirmPopup() {
   const popup = document.getElementById("confirm-popup");
   popup.classList.remove("visible");
@@ -33,8 +37,13 @@ function showGameOverPopup() {
   const popup = document.getElementById("game-over-popup");
   popup.classList.remove("hidden");
   setTimeout(() => popup.classList.add("visible"), 0);
-  console.log("game over");
 }
+
+document.getElementById("game-over-close").addEventListener("click", () => {
+  const popup = document.getElementById("game-over-popup");
+  popup.classList.remove("visible");
+  setTimeout(() => popup.classList.add("hidden"), 200);
+});
 
 document.getElementById("game-over-retry").addEventListener("click", () => {
   window.location.reload();
