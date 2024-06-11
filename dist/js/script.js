@@ -93,3 +93,6 @@ function hideConfirmPopup() {
   popup.classList.remove("visible");
   setTimeout(() => popup.classList.add("hidden"), 200);
 }
+
+const darkModeToggle = document.querySelector(".dark-mode-toggle");
+const html = document.getElementsByTagName("html")[0];
